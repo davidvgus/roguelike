@@ -22,6 +22,10 @@ class Game
     end
   end
 
+  def running?
+    @running
+  end
+
   def start
     @running = true
   end
