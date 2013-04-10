@@ -3,11 +3,12 @@
 class Game
 
   attr_accessor :player, :running
-  attr_reader :map
+  attr_reader :map, :game_time
 
   def initialize map
     @map = map
     @running = false
+    @game_time = 0
   end
 
   def add_player player
@@ -32,6 +33,11 @@ class Game
 
   def stop
     @running = false
+  end
+
+  def update_world
+    @game_time += 1
+    true
   end
 
 end

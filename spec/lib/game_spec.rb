@@ -23,6 +23,10 @@ describe Game do
     it "responds with true when palyer added" do
       game.add_player(player)
     end
+
+    it "sets game time to 0" do
+      game.game_time.should eq 0
+    end
   end
 
   context "#process input" do
@@ -48,28 +52,16 @@ describe Game do
 
   end
 
-# context "control flow" do
-#  pending 
-# end
-#
-# context "Game Constants" do
-#   pending
-# end #Game constants
+  context "#update_world" do
 
-# context "#initialize" do
-#   pending
-# end
+    it "returns true" do
+      game.update_world.should eq true
+    end
 
-# context "#draw_world" do
-#   pending
-# end
+    it "increments gametime by one" do
+      expect { game.update_world }.to change(game, :game_time).from(0).to(1)
+    end
 
-# context "#get_input" do
-#   pending
-# end
-
-# context "#update_world" do
-#   pending
-# end
+  end
 
 end
