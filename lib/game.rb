@@ -1,5 +1,10 @@
 # lib/game.rb
 
+
+class KeyRouter
+
+end
+
 class Game
 
   attr_accessor :player, :running
@@ -9,6 +14,7 @@ class Game
     @map = map
     @running = false
     @game_time = 0
+    @key_router = KeyRouter.new
   end
 
   def add_player player
