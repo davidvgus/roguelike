@@ -7,7 +7,11 @@ require "game"
 
 describe Mob do
   let(:map) { Map.new(10,10) }
-  let(:mob) { Mob.new(3,4,"@", Game.new(map)) }
+  let(:grid_side) { 10 }
+  let(:grid) { Array.new(grid_side) {Array.new(grid_side) {0}} }
+  let(:game) { Game.new(map) }
+  let(:mob) { Mob.new(3,4,"@", game) }
+
 
   context "has constants" do
 
@@ -39,7 +43,7 @@ describe Mob do
 
   context "#set_prev" do
 
-    let(:mob2) { Mob.new(8,9,"I", Game.new) }
+    let(:mob2) { Mob.new(8,9,"I", Game.new(map)) }
 
     it "sets previous coordinates" do
       mob2.set_prev_coords [1,1]
@@ -49,9 +53,12 @@ describe Mob do
   end
 
   context "#move" do
+
+
     it "moves left" do
+      game.map.load(grid)
       mob.move(:left)
-      mob.get_coords.should be [0,0]
+      mob.get_coords.should eq [2,4]
     end
   end
 #   def move(direction)

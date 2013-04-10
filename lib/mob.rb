@@ -33,9 +33,11 @@ class Mob
     new_x, new_y = @x + MOVEMENT_VECTORS[direction][:x],
       @y + MOVEMENT_VECTORS[direction][:y]
     if @game.map.in_bounds?(new_x,new_y) && @game.map.passable?(new_x, new_y)
-      True
+      @x,@y = @x + MOVEMENT_VECTORS[direction][:x],
+        @y + MOVEMENT_VECTORS[direction][:y]
+      true
     else
-      False
+      false
     end
   end
 end
