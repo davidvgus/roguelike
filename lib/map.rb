@@ -31,7 +31,7 @@ class Map
       @grid = new_grid
       true
     else
-      return false
+      false
     end
   end # load
 
