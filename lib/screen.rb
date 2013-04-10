@@ -29,4 +29,19 @@ class Screen
     @win.close
   end
 
+  def draw_map map
+    map.grid.each_with_index do |line, index|
+      add_string(index, 0, line.join)
+    end
+  end
+
+  def draw_player mob
+      add_string(mob.x, mob.y, mob.character)
+  end
+
+  def draw_game(game)
+    draw_map game.map
+    draw_player game.player
+  end
+
 end
