@@ -54,21 +54,39 @@ describe Mob do
 
   context "#move" do
 
+    it "moves down" do
+      game.map.load(grid)
+      mob.move(:down)
+      mob.get_coords.should eq [3,5]
+    end
+
+    it "moves up" do
+      game.map.load(grid)
+      mob.move(:up)
+      mob.get_coords.should eq [3,3]
+    end
+
+
+    it "moves up" do
+      game.map.load(grid)
+      mob.move(:up)
+      mob.get_coords.should eq [3,3]
+    end
+
 
     it "moves left" do
       game.map.load(grid)
       mob.move(:left)
       mob.get_coords.should eq [2,4]
     end
+
+    it "moves right" do
+      game.map.load(grid)
+      mob.move(:right)
+      mob.get_coords.should eq [4,4]
+    end
+
   end
-#   def move(direction)
-#     x_direction, y_direction = @move_vector[direction]
-#     if passable?(x,y)
-#      set_prev
-#      @x += x_direction
-#      @y += y_direction
-#     end
-#   end
 
 end
 
