@@ -31,7 +31,8 @@ class Screen
 
   def draw_map map
     map.grid.each_with_index do |line, index|
-      add_string(index, 0, line.join)
+      row = line.join.gsub("0", " ")
+      add_string(index + 1, 1, row)
     end
   end
 
