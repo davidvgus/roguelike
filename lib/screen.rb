@@ -3,10 +3,13 @@
 require 'curses'
 
 class Screen
-  def initialize(height, width, top, left)
+  def initialize(height, width, top, left, 
+                 box_sides = "|", box_top_bottom = "-")
     Curses.init_screen()
     @win = Curses::Window.new( height, width, top, left )
-    @win.box("|", "-")
+    Curses.noecho
+    Curses.curs_set(0)
+    @win.box(box_sides, box_top_bottom)
   end
 
   def add_string(x,y,string)
