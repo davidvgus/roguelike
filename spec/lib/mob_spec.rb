@@ -6,8 +6,8 @@ require "map"
 require "game"
 
 describe Mob do
-  let(:map) { Map.new(10,10) }
   let(:grid_side) { 10 }
+  let(:map) { Map.new(10,10) }
   let(:grid) { Array.new(grid_side) {Array.new(grid_side) {0}} }
   let(:game) { Game.new(map) }
   let(:mob) { Mob.new(3,4,"@", game) }

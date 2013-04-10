@@ -24,7 +24,7 @@ class Map
                else
                  true
                end
-  end
+  end # in_bounds?
 
   def load new_grid
     if new_grid.length == @grid.length && new_grid[0].length == @grid[0].length
@@ -33,10 +33,10 @@ class Map
     else
       return false
     end
-  end
+  end # load
 
   def passable?(x,y)
     in_bounds?(x,y) && @grid[y][x] < 1
-  end
+  end # passable?
 
 end
