@@ -6,17 +6,7 @@ require "game"
 describe Game do
 
   context "Game Constants" do
-
-    it "has a movement vector hash constant" do
-      movement_vectors_for_test = {:up => [0, -1],
-                    :down => [0, 1],
-                    :left => [-1, 0],
-                    :right => [1, 0]}
-
-      movement_vectors = Game::MOVEMENT_VECTORS
-      movement_vectors.should eq movement_vectors_for_test
-    end
-
+    pending
   end #Game constants
 
   context "#initialize" do

@@ -2,11 +2,25 @@
 
 require "spec_helper"
 require "mob"
+require "map"
 require "game"
 
 describe Mob do
+  let(:map) { Map.new(10,10) }
+  let(:mob) { Mob.new(3,4,"@", Game.new(map)) }
 
-  let(:mob) { Mob.new(3,4,"@", Game.new) }
+  context "has constants" do
+
+    it "has a movement vector hash constant" do
+      movement_vectors_for_test = {:up => {x:0, y:-1},
+                    :down => {x:0, y:1},
+                    :left => {x:-1, y:0},
+                    :right => {x:1, y:0}}
+
+      movement_vectors = Mob::MOVEMENT_VECTORS
+      movement_vectors.should eq movement_vectors_for_test
+    end
+  end
 
   context "#initialize" do
 
