@@ -17,10 +17,6 @@ class Screen
     @win.addstr(string)
   end
 
-  def refresh
-    @win.refresh if @win
-  end
-
   def get_char
     @win.getch
   end
@@ -37,12 +33,18 @@ class Screen
   end
 
   def draw_player mob
-      add_string(mob.x, mob.y, mob.character)
+    x = mob.x + 1
+    y = mob.y + 1
+    add_string(y, x, mob.character)
   end
 
   def draw_game(game)
     draw_map game.map
     draw_player game.player
+  end
+
+  def refresh
+    @win.refresh
   end
 
 end
