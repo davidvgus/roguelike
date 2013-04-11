@@ -24,6 +24,14 @@ class Game
 
   def process_input input
     case input
+    when "k"
+      @player.move(:up)
+    when "j"
+      @player.move(:down)
+    when "l"
+      @player.move(:right)
+    when "h"
+      @player.move(:left)
     when "q"
       @running = false
     end
