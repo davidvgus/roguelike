@@ -54,6 +54,10 @@ describe Mob do
 
   context "#move" do
 
+    before(:each) do
+      game.map.load(grid)
+    end
+
     it "moves down" do
       game.map.load(grid)
       mob.move(:down)
