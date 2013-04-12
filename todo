@@ -1,0 +1,5 @@
+Create Method to switch map ints for tile chars
+
+Test to see if strings with returns in the print down a curses window.
+
+If so create a method to print whole map with correct tile chars from grid.
