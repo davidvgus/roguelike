@@ -35,6 +35,11 @@ class Map
     end
   end # load
 
+  def load_file file
+    file = File.read(File.join("maps", "map1.txt"))
+    @grid = file.split.map {|line| line.split('').map(&:to_i)}
+  end
+
   def passable?(x,y)
     in_bounds?(x,y) && @grid[y][x] < 1
   end # passable?

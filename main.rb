@@ -12,7 +12,8 @@ MAP_WINDOW_HEIGHT = 11
 MAP_WINDOW_WIDTH = 11
 map = Map.new(MAP_WINDOW_HEIGHT, MAP_WINDOW_WIDTH)
 game = Game.new(map)
-game.map.load(Array.new(MAP_WINDOW_HEIGHT ) {Array.new(MAP_WINDOW_WIDTH) {0}})
+#game.map.load(Array.new(MAP_WINDOW_HEIGHT ) {Array.new(MAP_WINDOW_WIDTH) {0}})
+game.map.load_file("map1")
 game.add_player Mob.new(4, 4, "@", game)
 game.start
 
